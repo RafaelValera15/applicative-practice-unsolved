@@ -10,12 +10,18 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
-
+  if (array.length === 0) return undefined;
+  return array.reduce((min, current) => {
+    return cb(current) < cb(min) ? current : min;
+  });
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
-
+  if (array.length === 0) return undefined;
+  return array.reduce((max, current) => {
+    return cb(current) > cb(max) ? current : max;
+  });
 }
 
 
